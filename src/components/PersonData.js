@@ -9,31 +9,47 @@ export default class PersonData extends Component {
       personalData: {
         name: "Max",
         lastname: "Mustermann",
-        dateOfBirth: new Date(),
+        dateOfBirth: new Date().toLocaleDateString(),
         adress: "Musterweg 1",
         zip: 8010,
         country: "Austria",
         imgsrc: "testurl",
       },
-      isEdit: true,
+      isEdit: false,
       dataPerson: [],
     };
+    this.changeValues = this.changeValues.bind(this);
     //this.handleChange = this.handleChange.bind(this);
   }
 
   editData() {
     this.setState({ isEdit: !this.state.isEdit });
   }
+  changeValues(name, lastname, dateOfBirth, adress, zip, country) {
+    this.setState({
+      personalData: {
+        name: name,
+        lastname: lastname,
+        dateOfBirth: dateOfBirth,
+        adress: adress,
+        zip: zip,
+        country: country,
+      },
+    });
+  }
   render() {
     return (
       <div className="personal-data-input">
         {this.state.isEdit ? (
-          <DataInput data={this.state.personalData} />
+          <DataInput
+            data={this.state.personalData}
+            changeValues={this.changeValues}
+          />
         ) : (
           <DataShow data={this.state.personalData} />
         )}
         <button onClick={() => this.editData()}>
-          {this.state.isEdit ? "Save" : "Edit"}
+          {this.state.isEdit ? "Done" : "Edit"}
         </button>
       </div>
     );
