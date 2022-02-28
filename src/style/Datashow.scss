@@ -1,0 +1,18 @@
+.data {
+  font-size: 1.6em;
+  .person-data {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    flex-wrap: wrap;
+  }
+  li {
+    list-style-type: none;
+    margin-right: 3%;
+    &:nth-child(1),
+    &:nth-child(2) {
+      font-size: 3em;
+      grid-column: 1 / span 2;
+    }
+  }
+}

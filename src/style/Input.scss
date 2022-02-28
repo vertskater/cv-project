@@ -1,0 +1,26 @@
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  display: block;
+  width: 100%;
+  height: 3em;
+  border: none;
+  border-bottom: 3px solid black;
+  background-color: aquamarine;
+  margin: 5px 0;
+}
+label {
+  font-size: 1.2em;
+}
+input[type="submit"] {
+  background-color: lightskyblue;
+  width: 100px;
+  height: 50px;
+  font-size: 1.2em;
+  &:hover {
+    background-color: white;
+  }
+  &:active {
+    background-color: greenyellow;
+  }
+}

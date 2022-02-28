@@ -19,7 +19,6 @@ export default class PersonData extends Component {
       dataPerson: [],
     };
     this.changeValues = this.changeValues.bind(this);
-    //this.handleChange = this.handleChange.bind(this);
   }
 
   editData() {
