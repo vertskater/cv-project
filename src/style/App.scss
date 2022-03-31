@@ -13,6 +13,7 @@ body {
   border-radius: 10px;
   background-color: cadetblue;
   box-shadow: 2px 2px 5px black;
+  width: 700px;
 }
 .personal-data-input {
   position: relative;
@@ -22,5 +23,10 @@ body {
     right: 10px;
     background-color: white;
     width: 100px;
+  }
+}
+@media (max-width: 700px) {
+  .App {
+    width: auto;
   }
 }
