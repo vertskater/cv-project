@@ -13,13 +13,23 @@ export default class PersonData extends Component {
         adress: "Musterweg 1",
         zip: 8010,
         country: "Austria",
-        imgsrc: "testurl",
+        imgsrc: "placeholder.png",
       },
       isEdit: false,
-      dataPerson: [],
     };
     this.changeValues = this.changeValues.bind(this);
   }
+  handleChange = (e) => {
+    e.preventDefault();
+    this.changeValues(
+      e.target.name.value,
+      e.target.lastname.value,
+      e.target.birthdate.value,
+      e.target.street.value,
+      e.target.zip.value,
+      e.target.country.value
+    );
+  };
 
   editData() {
     this.setState({ isEdit: !this.state.isEdit });
@@ -42,7 +52,7 @@ export default class PersonData extends Component {
         {this.state.isEdit ? (
           <DataInput
             data={this.state.personalData}
-            changeValues={this.changeValues}
+            handleChange={this.handleChange}
           />
         ) : (
           <DataShow data={this.state.personalData} />

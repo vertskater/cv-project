@@ -25,6 +25,15 @@ body {
     width: 100px;
   }
 }
+.btn-add {
+  padding: 1em;
+  background-color: wheat;
+  color: black;
+  border-radius: 5px;
+  margin: 15px 0 15px 0;
+  text-align: center;
+}
+
 @media (max-width: 700px) {
   .App {
     width: auto;

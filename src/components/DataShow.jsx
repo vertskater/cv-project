@@ -2,9 +2,6 @@ import { Component } from "react";
 import "../style/Datashow.scss";
 
 export default class DataShow extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const { data } = this.props;
     const personData = Object.values(data);

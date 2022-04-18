@@ -2,26 +2,12 @@ import { Component } from "react";
 import "../style/Input.scss";
 
 export default class DataInput extends Component {
-  constructor(props) {
-    super(props);
-    //this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(e) {
-    e.preventDefault();
-    this.props.changeValues(
-      e.target.name.value,
-      e.target.lastname.value,
-      e.target.birthdate.value,
-      e.target.street.value,
-      e.target.zip.value,
-      e.target.country.value
-    );
-  }
   render() {
-    const { data } = this.props;
+    const { data, handleChange } = this.props;
+    //const { handleChange } = this.props;
     return (
       <div>
-        <form onSubmit={(e) => this.handleChange(e)}>
+        <form onSubmit={(e) => handleChange(e)}>
           <div className="column2">
             <label htmlFor="firstname">Name:</label>
             <input
