@@ -1,5 +1,6 @@
 import { Component } from "react";
 import uniqid from "uniqid";
+import update from "immutability-helper";
 
 import EduInput from "./EduInput";
 import School from "../School";
@@ -13,10 +14,14 @@ export default class Education extends Component {
       educations: [],
       isEdit: false,
       id: uniqid(),
+      isChange: false,
+      editSchool: {},
     };
   }
   editData() {
-    this.setState({ isEdit: !this.state.isEdit });
+    this.setState((state) =>
+      update(state, { $set: { isEdit: !state.isEdit, isChange: false } })
+    );
   }
   addSchool = (e) => {
     e.preventDefault();
@@ -39,21 +44,35 @@ export default class Education extends Component {
       }),
     }));
   };
-  handleEdit = () => {
-    this.setState({ isEdit: !this.state.isEdit });
+  handleEdit = (school, start, end) => {
+    this.handleClick(school);
+    this.setState((state) =>
+      update(state, {
+        $set: {
+          isEdit: !state.isEdit,
+          isChange: true,
+          editSchool: { school, start, end },
+        },
+      })
+    );
   };
   render() {
     return (
       <div className="education">
         <h2>Education:</h2>
-        {this.state.isEdit && <EduInput addSchool={this.addSchool} />}
+        {this.state.isEdit && (
+          <EduInput
+            addSchool={this.addSchool}
+            dataChange={this.state.isChange}
+            changeSchool={this.state.editSchool}
+          />
+        )}
         <button className="btn-edu" onClick={() => this.editData()}>
           {this.state.isEdit ? "Done" : "Add School"}
         </button>
         {!this.state.isEdit && (
           <Schools
             schools={this.state.educations}
-            id={this.state.id}
             clickHandler={this.handleClick}
             editHandler={this.handleEdit}
           />
