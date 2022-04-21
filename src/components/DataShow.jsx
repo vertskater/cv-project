@@ -1,4 +1,5 @@
 import { Component } from "react";
+import * as React from "react";
 import "../style/Datashow.scss";
 
 export default class DataShow extends Component {

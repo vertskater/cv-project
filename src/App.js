@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Person from "./components/PersonData";
 import Education from "./components/Education";
+import Experience from "./components/Experience";
 import "./style/App.scss";
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App">
         <Person />
         <Education />
+        <Experience />
       </div>
     );
   }

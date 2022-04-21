@@ -8,8 +8,36 @@
 
 .education .btn-edu {
   position: absolute;
-  top: 0px;
+  top: 30px;
   right: 10px;
   background-color: white;
   width: 100px;
+  padding: 10px 0;
+}
+.education {
+  h2 {
+    margin: 20px 0;
+  }
+  .school {
+    table {
+      padding: 5px;
+      width: 100%;
+      font-size: 1.2em;
+      background-color: white;
+      .del-school,
+      .edit-school,
+      .del-work,
+      .edit-work {
+        cursor: pointer;
+        color: blue;
+      }
+      thead {
+        background-color: #dee4eb;
+        border: 3px solid white;
+        td {
+          border: 5px solid #dee4eb;
+        }
+      }
+    }
+  }
 }

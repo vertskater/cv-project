@@ -5,6 +5,13 @@ export default function Schools({ schools, clickHandler, editHandler }) {
   return (
     <div className="school">
       <table>
+        <thead>
+          <tr>
+            <td>Schoolname</td>
+            <td>Start Date</td>
+            <td>End Date</td>
+          </tr>
+        </thead>
         <tbody>
           {schools.map((school) => {
             return (
@@ -13,6 +20,7 @@ export default function Schools({ schools, clickHandler, editHandler }) {
                 <td>{school.start}</td>
                 <td>{school.end}</td>
                 <td
+                  className="edit-school"
                   onClick={() =>
                     editHandler(school.school, school.start, school.end)
                   }
