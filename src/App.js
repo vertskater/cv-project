@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Person from "./components/PersonData";
+import Person from "./functionalComponents/PersonData";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import "./style/App.scss";
